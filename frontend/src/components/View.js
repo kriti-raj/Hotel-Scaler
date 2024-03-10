@@ -11,7 +11,7 @@ const View = () => {
   useEffect(() => {
     const getBookings = () => {
       axios
-        .get("http://localhost:8080/hotel/get")
+        .get("https://hotel-scaler-backend.vercel.app/hotel/get")
         .then((res) => {
           setBookings(res.data);
         })
@@ -33,7 +33,7 @@ const View = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:8080/hotel/delete/${id}`)
+          .delete(`https://hotel-scaler-backend.vercel.app/hotel/delete/${id}`)
           .then((res) => {
             Swal.fire("Deleted!", res.data.status, "success");
             //update table after deleting
@@ -100,10 +100,10 @@ const View = () => {
                   {item.roomType === "a"
                     ? (item.hours * 100)
                     : item.roomType === "b"
-                    ? (item.hours * 80)
-                    : item.roomType === "c"
-                    ? (item.hours * 50)
-                    : 0}
+                      ? (item.hours * 80)
+                      : item.roomType === "c"
+                        ? (item.hours * 50)
+                        : 0}
                 </td>
                 <td className="py-2 align-middle flex justify-center">
                   <Link

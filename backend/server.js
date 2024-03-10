@@ -9,9 +9,13 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8070;
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://hotel-scaler-frontend.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 const URL = process.env.MONGODB_URI;
 
@@ -23,6 +27,10 @@ connection.once("open", () => {
 });
 
 const hotelRoute = require('./routes/hotel_route');
+
+app.get('/', (req, res) => {
+  res.send('Hotel Management Backend Server');
+});
 
 app.use('/hotel', hotelRoute);
 

@@ -11,29 +11,27 @@ import Create from './components/Create';
 import EditBooking from './components/EditBooking';
 // import Tail from './components/Tail';
 
-
 export default function App() {
-
-
- const router = createBrowserRouter([
-  {
-    path:"/",
-    element:<Home />
-  },
-  {
-    path:"/create",
-    element:<Create />
-  },
-  {
-    path:"/view",
-    element:<View />
-  },
-  {
-    path:"/view/:id",
-    element:<EditBooking />
-  }
- ])
-
+  axios.defaults.withCredentials = true;
+  // axios.post('hotel-scaler-backend.vercel.app',)
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/create",
+      element: <Create />
+    },
+    {
+      path: "/view",
+      element: <View />
+    },
+    {
+      path: "/view/:id",
+      element: <EditBooking />
+    }
+  ])
 
   return (
     <RouterProvider router={router} />

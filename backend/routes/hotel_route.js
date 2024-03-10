@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Booking = require("../models/hotel");
-const booking = require("../models/hotel");
+let booking = require("../models/hotel");
 
 router.route("/add").post((req, res) => {
   const email = req.body.email;
