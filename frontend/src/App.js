@@ -14,7 +14,7 @@ import EditBooking from './components/EditBooking';
 
 export default function App() {
   axios.defaults.withCredentials = true;
-  // axios.post('hotel-scaler-backend.vercel.app',)
+
   const router = createBrowserRouter([
     {
       path: "/",
