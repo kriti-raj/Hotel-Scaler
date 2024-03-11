@@ -5,21 +5,23 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.7",
+    "autoprefixer": "^9.8.8",
+    "axios": "^0.26.0",
+    "postcss": "^8.3.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3",
-    "react-scripts": "^3.0.1",
+    "react-router-dom": "^6.2.3",
+    "react-scripts": "^5.0.0",
     "sweetalert2": "^11.6.13",
-    "web-vitals": "^2.1.4",
-    "tailwindcss": "^3.4.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,5 +43,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
 }
