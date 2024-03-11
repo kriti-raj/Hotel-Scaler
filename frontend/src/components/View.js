@@ -11,7 +11,7 @@ const View = () => {
   useEffect(() => {
     const getBookings = () => {
       axios
-        .get("https://hotel-scaler-backend.vercel.app/hotel/get")
+        .get("https://hotel-scaler.onrender.com/hotel/get")
         .then((res) => {
           setBookings(res.data);
         })
@@ -33,7 +33,7 @@ const View = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://hotel-scaler-backend.vercel.app/hotel/delete/${id}`)
+          .delete(`https://hotel-scaler.onrender.com/hotel/delete/${id}`)
           .then((res) => {
             Swal.fire("Deleted!", res.data.status, "success");
             //update table after deleting

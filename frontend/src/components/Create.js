@@ -40,7 +40,7 @@ const Create = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .post("https://hotel-scaler-backend.vercel.app/hotel/add", newBooking)
+          .post("https://hotel-scaler.onrender.com/hotel/add", newBooking)
           .then(() => {
             Swal.fire("Booking confirmed!", "", "success");
           })

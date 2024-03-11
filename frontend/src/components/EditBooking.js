@@ -12,7 +12,7 @@ const EditBooking = () => {
 
   useEffect(() => {
     const getUser = () => {
-      axios.get(`https://hotel-scaler-backend.vercel.app/hotel/get/${id}`).then((res) => {
+      axios.get(`https://hotel-scaler.onrender.com/hotel/get/${id}`).then((res) => {
         setUser(res.data.user);
       });
     };
@@ -30,7 +30,7 @@ const EditBooking = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`https://hotel-scaler-backend.vercel.app/hotel/update/${id}`, user)
+      .put(`https://hotel-scaler.onrender.com/hotel/update/${id}`, user)
       .then(() => {
         Swal.fire({
           title: "Do you want to update changes?",
