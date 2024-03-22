@@ -9,11 +9,12 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8070;
 
-app.use(cors({
-  origin: ["https://hotel-scaler-frontend.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: ["https://hotel-scaler-frontend.vercel.app"],
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true
+// }));
+app.use(cors());
 
 app.use(express.json());
 
