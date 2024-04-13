@@ -9,7 +9,7 @@ const View = () => {
   useEffect(() => {
     const getBookings = () => {
       axios
-        .get("https://hotel-scaler.onrender.com/hotel/get")
+        .get("http://localhost:8070/hotel/get")
         .then((res) => {
           setBookings(res.data);
         })
@@ -31,7 +31,7 @@ const View = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://hotel-scaler.onrender.com/hotel/delete/${id}`)
+          .delete(`http://localhost:8070/hotel/delete/${id}`)
           .then((res) => {
             Swal.fire("Deleted!", res.data.status, "success");
             //update table after deleting

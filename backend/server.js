@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8070;
 
 app.use(
   cors({
-    origin: ["https://hotel-scaler-frontend.vercel.app"],
+    origin: ["http://localhost:1234"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -19,7 +19,8 @@ app.use(
 
 app.use(express.json());
 
-const URL = process.env.MONGODB_URI;
+// const URL = process.env.MONGODB_URI;
+const URL = "mongodb://127.0.0.1:27017/hotel-scalar";
 
 mongoose.connect(URL);
 

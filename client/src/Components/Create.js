@@ -38,7 +38,7 @@ const Create = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .post("https://hotel-scaler.onrender.com/hotel/add", newBooking)
+          .post("http://localhost:8070/hotel/add", newBooking)
           .then(() => {
             Swal.fire("Booking confirmed!", "", "success");
           })
