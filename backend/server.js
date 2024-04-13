@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
-// const bodyParser = require("body-parser");
+const ExpressError = require("./uitls/ExpressError.js");
+const path = require("path");
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,11 @@ app.use(
 );
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
+
+app.set("view engine", "ejs"); 
+app.set("views", path.join(__dirname, "views")); 
+app.use(express.static(path.join(__dirname, "/public"))); 
 
 // const URL = process.env.MONGODB_URI;
 const URL = "mongodb://127.0.0.1:27017/hotel-scalar";
@@ -45,6 +51,8 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went Wrong!" } = err;
   res.status(statusCode).render("error.ejs", { message });
+  // res.status(statusCode).json({ message });
+
 });
 
 app.listen(PORT, () => {

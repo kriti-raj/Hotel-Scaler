@@ -1,0 +1,21 @@
+body{
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+h1{
+  font-size: 40px;
+}
+a{
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
