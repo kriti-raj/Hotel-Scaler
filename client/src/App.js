@@ -7,10 +7,12 @@ import View from "./Components/View.js";
 import Error from "./Components/Error.js";
 import Create from "./Components/Create.js";
 import EditBooking from "./Components/EditBooking.js";
-
+import axios from "axios";
+import Tail from "./Components/Tail.js"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const App = () => {
+   axios.defaults.withCredentials = true;
   return (
     <div>
       <Pnavbar />
@@ -35,6 +37,7 @@ const appRouter = createBrowserRouter([
         path: "/view/:id",
         element: <EditBooking />,
       },
+      { path: "/admin", element: <Tail /> },
     ],
     errorElement: <Error />,
   },
